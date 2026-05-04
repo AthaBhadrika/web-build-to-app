@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F0FFF4;
+  --color-foreground: #064E3B;
+  --color-surface: #DCFCE7;
+  --color-surface-hover: #BBF7D0;
+  --color-border: #86EFAC;
+  --color-primary: #16A34A;
+  --color-primary-hover: #15803D;
+  --color-accent: #22C55E;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes rainDrop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.rain-drop {
+  position: fixed;
+  border-radius: 9999px;
+  background-color: #4ade80;
+  opacity: 0;
+  pointer-events: none;
+  animation: rainDrop linear infinite;
+  z-index: 0;
+}
